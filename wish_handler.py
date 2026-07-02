@@ -26,6 +26,3 @@ class Wish:
                 item = string.capwords(word)
                 wishlist.append(item)
         return wishlist
-
-# wish = Wish()
-# print(wish.format_words("Wishlist: swaggering boots Skin, rox's pathFinder outfit, exo-rifle skin"))

@@ -107,7 +107,3 @@ class StoreTracker:
         for i in search_results:
             return_text += f"{i}\n"
         return return_text
-
-# test_list= ['Swaggering Boots Skin', "Rox's Pathfinder Outfit", 'Exo-Rifle Skin']
-# tracker = StoreTracker()
-# print(tracker.get_data(test_list))

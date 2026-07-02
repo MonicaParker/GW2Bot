@@ -24,8 +24,6 @@ class Bot:
         # Creates instance of a client, - our connection to Discord
         self.client = discord.Client(intents=self.intents)
 
-    # bot = commands.Bot(command_prefix="!")
-
 
     def login(self):
         @self.client.event
@@ -42,7 +40,6 @@ class Bot:
         async def on_message(message):
             channel = str(message.channel.name)
             user_message = str(message.content)
-            # Meant to prevent triggering on our own messages
             if message.author == self.client.user:
                 return
 
@@ -59,7 +56,6 @@ class Bot:
                     await message.channel.send(guilt_trip_response)
 
                 elif "Wishlist:" in user_message:
-                    #formatted_string = wish.format_words(user_message)
                     store_results = tracker.get_gem_store(formatted_string)
 
                     if store_results == "":
