@@ -14,8 +14,8 @@ token = os.getenv("DISCORD_TOKEN")
 
 class Bot:
     def __init__(self):
-        self.APP_ID = "1318637245548204135"
-        self.default_channel_id = 929457317919998002
+        self.APP_ID = os.getenv("APP_ID")
+        self.default_channel_id = int(os.getenv("DEFAULT_CHANNEL_ID"))
         self.message = ""
         self.endpoint = f"https://discord.com/oauth2/authorize?client_id={self.APP_ID}&permissions=2048&integration_type=0&scope=bot+applications.commands"
         self.intents = discord.Intents.default()
