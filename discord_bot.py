@@ -17,6 +17,8 @@ guilt_trip_list = ["Are you SURE you should be spending real money on this?",
                    "Are you sure? That's good chocolate money.",
                    "I'm judging you."]
 
+startup_instructions = 'Wallet Destroyer is online. Begin requests with `Wishlist:` followed by a comma-separated list of complete item names. Bot does not support partial matches. \n\nE.g.:\n`Wishlist: Sunspear Glider, Swaggering Cape, Jackal Chair`\n\nFor financial deterrents, request `Guilt Trip`'
+
 class Bot:
     def __init__(self):
         self.APP_ID = os.getenv("APP_ID")
@@ -34,7 +36,7 @@ class Bot:
         async def on_ready():
             print(f"We have logged in as {self.client.user}")
             channel = self.client.get_channel(self.default_channel_id)
-            await channel.send('Wallet Destroyer is online. Begin requests with `Wishlist:` followed by a comma-separated list of complete item names. Bot does not support partial matches. \n\nE.g.:\n`Wishlist: Sunspear Glider, Swaggering Cape, Jackal Chair`\n\nFor financial deterrents, request `Guilt Trip`')
+            await channel.send(startup_instructions)
 
 
     def send_message(self):
