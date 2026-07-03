@@ -26,7 +26,6 @@ class Bot:
         self.intents = discord.Intents.default()
         self.intents.messages = True
         self.intents.message_content = True
-        # Creates instance of a client, - our connection to Discord
         self.client = discord.Client(intents=self.intents)
 
 
