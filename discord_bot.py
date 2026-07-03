@@ -11,6 +11,11 @@ tracker = StoreTracker()
 load_dotenv()
 token = os.getenv("DISCORD_TOKEN")
 
+guilt_trip_list = ["Are you SURE you should be spending real money on this?",
+                   "You know, I hear City of Heroes costumes are free.",
+                   "Would you rather spend your money on this or on that thing you love?",
+                   "Are you sure? That's good chocolate money.",
+                   "I'm judging you."]
 
 class Bot:
     def __init__(self):
@@ -42,12 +47,6 @@ class Bot:
             user_message = str(message.content)
             if message.author == self.client.user:
                 return
-
-            guilt_trip_list = ["Are you SURE you should be spending real money on this?",
-                               "You know, I hear City of Heroes costumes are free.",
-                               "Would you rather spend your money on this or on that thing you love?",
-                               "Are you sure? That's good chocolate money.",
-                               "I'm judging you."]
 
             if channel == "general":
                 formatted_string = wish.format_words(user_message)
